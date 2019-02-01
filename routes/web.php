@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('lang/{locale}', 'LocalizationController@index');
 
 Auth::routes(['register'=>false]);
 

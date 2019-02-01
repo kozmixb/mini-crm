@@ -8,23 +8,23 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <span>Employees</span>
+            <span>@lang('custom.employees')</span>
         </div>
         <div class="card-body">
             @auth
-                <a href="/employees/create" class="btn btn-success">Create new employee</a>
+                <a href="/employees/create" class="btn btn-success">@lang('custom.createEmployee')</a>
             @endauth
             <div class="card mt-3">
-                <div class="card-header">Employees list</div>
+                <div class="card-header">@lang('custom.employeesList')</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Company</th>
-                                <th>Email</th>
-                                <th>Phone</th>
+                                <th>@lang('custom.first_name')</th>
+                                <th>@lang('custom.last_name')</th>
+                                <th>@lang('custom.company')</th>
+                                <th>@lang('custom.email')</th>
+                                <th>@lang('custom.phone')</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -39,14 +39,14 @@
                                     <td>{{$employee->phone}}</td>
                                     <td>
                                         @auth
-                                        <div class="btn-group">
-                                        <a class="btn btn-outline-secondary btn-sm" href="/employees/{{ $employee->id }}/edit">Edit</a>
                                         <form action="/employees/{{ $employee->id }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="ml-1 btn btn-sm btn-danger">Delete</button>
+                                            <div class="btn-group">
+                                                <a class="btn btn-outline-secondary btn-sm" href="/employees/{{ $employee->id }}/edit">@lang('custom.edit')</a>
+                                                <button type="submit" class="btn btn-sm btn-danger">@lang('custom.delete')</button>
+                                            </div>
                                         </form>
-                                        </div>
                                         @endauth
                                     </td>
                                 </tr>
@@ -54,7 +54,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="6">There are no employees</td>
+                                    <td colspan="6">@lang('custom.noEmployees')</td>
                                 </tr>
                             @endif
                         </tbody>

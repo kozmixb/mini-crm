@@ -3,13 +3,13 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <span>Create New Company</span>
+            <span>@lang('custom.createCompany')</span>
         </div>
         <div class="card-body">
             <form action="/companies" method="post" enctype="multipart/form-data">
                 @csrf
                 @include('companies._form')
-                <button type="submit" name="submit" class="btn btn-success btn-lg">Create</button>
+                <button type="submit" name="submit" class="btn btn-success btn-lg">@lang('custom.create')</button>
             </form>
         </div>
     </div>

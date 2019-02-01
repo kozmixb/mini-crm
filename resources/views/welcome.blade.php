@@ -1,18 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content">
-    <div class="title m-b-md">
-        Laravel
-    </div>
-
-    <div class="links">
-        <a href="https://laravel.com/docs">Documentation</a>
-        <a href="https://laracasts.com">Laracasts</a>
-        <a href="https://laravel-news.com">News</a>
-        <a href="https://nova.laravel.com">Nova</a>
-        <a href="https://forge.laravel.com">Forge</a>
-        <a href="https://github.com/laravel/laravel">GitHub</a>
+<div class="content text-center">
+    <h1>
+        @lang('custom.welcome')
+    </h1>
+    <h2>@lang('custom.chooseLanguage')</h2>
+    <div class="btn-group">
+        <a class="btn btn-success btn-lg" href="lang/hu">@lang('custom.hungarian')</a>
+        <a class="btn btn-primary btn-lg" href="lang/en">@lang('custom.english')</a>
     </div>
 </div>
 @endsection
